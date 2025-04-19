@@ -1,27 +1,41 @@
-# FormPro
+# FormPro 🧾✨
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+A full-featured Angular 13 application built to demonstrate core concepts like reactive and template-driven forms, observables, services, routing, lifecycle hooks, custom directives, and dark/light theming — complete with filter/sort logic and unit tests.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- ✅ **Dark/Light Theme Toggle** (real-time CSS variables)
+- ✅ **Reactive Form** for user registration with custom validation
+- ✅ **Template-Driven Form** for feedback submission
+- ✅ **Summary Table** with filtering and sorting
+- ✅ **Custom Directive** to highlight invalid form fields
+- ✅ **Mock Backend** using in-memory TypeScript arrays
+- ✅ **Toastr Notifications** for successful actions
+- ✅ **Unit Testing** with Jasmine + Karma
+- ✅ **CI/CD Integration** using GitHub Actions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📦 Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+| Layer        | Tools Used                          |
+|--------------|--------------------------------------|
+| Frontend     | Angular 13, TypeScript, HTML/CSS     |
+| Styling      | CSS                                  |
+| State Mgmt   | RxJS (Observables)                   |
+| Forms        | ReactiveFormsModule, FormsModule     |
+| Notifications| `ngx-toastr`                         |
+| Testing      | Jasmine, Karma                       |
+| CI/CD        | GitHub Actions                       |
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Getting Started
 
-## Running end-to-end tests
+### 1. Clone the Repo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/YOUR_USERNAME/form-pro.git
+cd form-pro
