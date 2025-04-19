@@ -1,4 +1,6 @@
+/*sets the theme of the app and chages the theme from dark to light and vice versa*/
 
+/*this is the default dark theme*/
    body {
     --bg-color: #121212;
     --text-color: #ffffff;
@@ -13,7 +15,7 @@
     padding: 0;
   }
 
-
+/* color theme when the toggle is slid to light theme*/
   body.light-theme {
     --bg-color: #ffffff;
     --text-color: #121212;
@@ -22,7 +24,7 @@
     --input-bg: #ffffff;
   }
 
-
+/*the toggle switch style*/
   .theme-toggle-switch {
     position: relative;
     display: inline-block;
