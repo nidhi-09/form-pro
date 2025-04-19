@@ -7,6 +7,7 @@ import { MOCK_FEEDBACK, MOCK_USERS } from './mock-data.data';
 })
 export class FormService {
 
+  // [....] is spread operator, it creates a new array instead of using the already existing array to avoid accidental changes
   private users = [...MOCK_USERS];
   private feedback = [...MOCK_FEEDBACK];
 
