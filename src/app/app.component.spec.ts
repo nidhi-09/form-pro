@@ -1,16 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule, FormsModule],
+      declarations: [AppComponent],
+      schemas: [NO_ERRORS_SCHEMA] // to ignore unknown elements like router-outlet
     }).compileComponents();
   });
 
@@ -26,10 +25,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('form-pro');
   });
 
-  it('should render title', () => {
+  it('should render theme toggle switch in the DOM', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('form-pro app is running!');
+    expect(compiled.querySelector('.theme-toggle-switch')).toBeTruthy();
   });
 });

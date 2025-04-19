@@ -14,19 +14,20 @@ export class FormService {
     return of(this.users);
   }
 
-  getFeedback(): Observable<any[]> {
-    return of(this.feedback);
-  }
-
 
   submitUser(data: any): Observable<any> {
     this.users.push(data);
     return of(data);
   }
 
-
   submitFeedback(feedback: any): Observable<any> {
+    this.feedback.push(feedback);
     return of(feedback);
   }
+
+  getFeedback(): Observable<any[]> {
+    return of(this.feedback);
+  }
+
   constructor() { }
 }

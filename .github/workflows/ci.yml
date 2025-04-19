@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: ⬇️ Checkout code
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - name: 🔧 Setup Node.js
@@ -19,11 +19,11 @@ jobs:
       with:
         node-version: '16'
 
-    - name: 📦 Install dependencies
+    - name: Install dependencies
       run: npm install
 
-    - name: 🧪 Run unit tests
+    - name: Run unit tests
       run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-    - name: 🏗️ Build Angular app
+    - name: Build Angular app
       run: npm run build -- --configuration production
