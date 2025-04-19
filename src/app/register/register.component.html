@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h2>Register</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label>
+      Full Name:
+      <input formControlName="fullName" appHighlightInvalid />
+      <div *ngIf="submitted && f['fullName'].errors">Full name is required.</div>
+    </label>
+
+    <label>
+      Email:
+      <input formControlName="email" appHighlightInvalid />
+      <div *ngIf="submitted && f['email'].errors">
+        <span *ngIf="f['email'].errors['required']">Email is required.</span>
+        <span *ngIf="f['email'].errors['email']">Invalid email format.</span>
+      </div>
+    </label>
+
+    <label>
+      Password:
+      <input type="password" formControlName="password" appHighlightInvalid />
+      <div *ngIf="submitted && f['password'].errors">
+        <span *ngIf="f['password'].errors['required']">Password is required.</span>
+        <span *ngIf="f['password'].errors['minlength']">Minimum 6 characters.</span>
+      </div>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p *ngIf="successMessage">{{ successMessage }}</p>
+</div>

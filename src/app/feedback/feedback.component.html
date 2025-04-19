@@ -1,0 +1,21 @@
+<form #feedbackForm="ngForm" (ngSubmit)="onSubmit(feedbackForm)">
+  <label>
+    Message:
+    <textarea name="message" [(ngModel)]="feedback.message" required></textarea>
+    <div *ngIf="feedbackForm.submitted && feedbackForm.controls['message']?.invalid">
+      Message is required.
+    </div>
+  </label>
+
+  <label>
+    Rating (1-5):
+    <input type="number" name="rating" [(ngModel)]="feedback.rating" required min="1" max="5" />
+    <div *ngIf="feedbackForm.submitted && feedbackForm.controls['rating']?.invalid">
+      Rating must be between 1 and 5.
+    </div>
+  </label>
+
+  <button type="submit">Submit Feedback</button>
+</form>
+
+<p *ngIf="submitted">Thank you for your feedback!</p>

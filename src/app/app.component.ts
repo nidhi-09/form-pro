@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'form-pro';
+
+  toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    console.log('Current theme:', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+  }
+
 }
