@@ -4,19 +4,25 @@ import { RegisterComponent } from './register.component';
 import { FormService } from '../form.service';
 import { of } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
   let formServiceSpy: jasmine.SpyObj<FormService>;
+  let toastrSpy: jasmine.SpyObj<ToastrService>;
+
 
   beforeEach(async () => {
     const spy = jasmine.createSpyObj('FormService', ['submitUser']);
+    toastrSpy = jasmine.createSpyObj('ToastrService', ['success', 'error']);
 
     await TestBed.configureTestingModule({
       declarations: [RegisterComponent],
       imports: [ReactiveFormsModule, FormsModule],
-      providers: [{ provide: FormService, useValue: spy }]
+      providers: [{ provide: FormService, useValue: spy },
+        { provide: ToastrService, useValue: toastrSpy }]
     }).compileComponents();
 
     formServiceSpy = TestBed.inject(FormService) as jasmine.SpyObj<FormService>;
@@ -69,7 +75,7 @@ describe('RegisterComponent', () => {
       email: 'jane@example.com',
       password: 'secret123'
     });
-    expect(component.successMessage).toBe('Registration successful!');
+    expect(toastrSpy.success).toHaveBeenCalledWith('User registered successfully!', 'Success');
   });
 
   it('should not call submitUser if form is invalid', () => {

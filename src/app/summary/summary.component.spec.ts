@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SummaryComponent } from './summary.component';
 import { FormService } from '../form.service';
 import { of } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 describe('SummaryComponent', () => {
   let component: SummaryComponent;
@@ -19,6 +20,7 @@ describe('SummaryComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [SummaryComponent],
+      imports: [FormsModule],
       providers: [{ provide: FormService, useValue: spy }]
     }).compileComponents();
 
